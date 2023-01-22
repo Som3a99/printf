@@ -1,88 +1,35 @@
-.\" _printf man page /usr/share/man/man3/printf.3
-.\"
-.TH _PRINTF 3 "15-03-2021" "0.1" "main _printf"
-
+.TH _PRINTF "1" "29 October 2019" "0x11" "_printf man page"
 .SH NAME
-_printf
-
-.B_printf - format and print data. Part of a project at Holberton School.
-
+_printf - print data and format
 .SH SYNOPSIS
-Part of a project at holberton school.
-This project mimics the printf found in in C.
-
-_printf FORMAT [ARGUMENT]...
-.ss
-
+.B printf FORMAT [ARGUMENT]...
 .SH DESCRIPTION
+Prints ARGUMENT(s) based on FORMAT
 
-_printf() the function produces output according to format string that \
-specifies how subsequent arguments are written and converted to stdout, the \
-standard output stream.
+If format includes format specifiers (subsequences beginning with %), the additional arguments following format are formatted and inserted in the resulting string replacing their respective specifiers.
 
-_printf() will loop through the format for a conversion specifier (%). If found\
-, it will access an array of structures and match the corresponding character \
-with the given function. The specified function will return a string-converted \
-version of the result and immediately passed into the buffer.
+_printf will also take an indefinite amount of arguments.
 
-.SH CONVERSION SPECIFIERS
+Example:
+_printf("%s", text);
 
-.IP %s
-prints a string.
+In the Example print the value of text with %s give the format of text.
+
+.B The conversion specifiers
+
 .IP %c
-prints a character.
+- prints character.
+.IP %s
+- prints string.
+.IP %%
+- prints percentage symbol.
 .IP %d
-prints an integer. Same as %i.
+- prints decimal.
 .IP %i
-See %d.
-.IP %u
-Prints unsigned int.
-.IP %o
-Converts unsigned int to octal.
-.IP %x
-Converts unsigned int to hexadecimal (lowercase)
-.IP %X
-Converts unsigned int to hexadecimal (uppercase)
-.IP %r
-Prints reverse of intput string
-.IP %R
-Converts string to rot13
+- prints integer number.
 
-.SH OPTIONS
-
-Pending
-
-.SH FORMAT
-controls the output as in C printf.  Interpreted sequences are:
-
-       \n     new line
-
-       \t     tab
-
-       %%     a single %
-
-.SS Example
-.RS
-_printf("Hello %s", "world");
-Prints string "Hello world"
-
-_printf("They call me mad, but one day when history of France is written, they \
-will mark my name well ...%s ", "Sidney Applebaum")
-
-.RE
-
-.SS Return Value
-Upon success, these main function will return the number of characters printed.
-
-.SH "SEE ALSO"
-.SH ""
-
-.BR printf(1)
-
-.P
-
-.SH BUGS
-Memory issues are known to frequent this function. User beware.
-
-.SH "AUTHOR"
-Bezawit Kendie and Brian Kiplangat
+.SH SEE ALSO
+.I printf (3)
+.SH AUTHOR
+Camilo Baquero www.camilob.com
+Camilo Bayona www.camilobayona.com
